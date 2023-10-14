@@ -2,16 +2,20 @@
 
 function solveEquation(a, b, c) {
 	let arr = [];
-	let d = Math.pow(b, 2) - 4 * a * c;
-	if (d = 0) {
-		arr = (-b / (2 * a));
-		console.log("Дискриминант равен 0, уравнение имеет один корень", arr)
-	} else if (d < 0) {
-		arr = [(-b + Math.sqrt(d)) / (2 * a), (-b - Math.sqrt(d)) / (2 * a)]
-		console.log("Дискриминант больше 0, уравнение имеет два корня", arr)
-	} else {
+	let discriminant;
+	discriminant = (Math.pow(b, 2) - (4 * a * c));
+
+	if (discriminant > 0) {
+		arr = [(-b + Math.sqrt(discriminant)) / (2 * a),
+		(-b - Math.sqrt(discriminant)) / (2 * a)];
+	} 
+	
+	else if (discriminant == 0) {
+		arr = [(-b) / (2 * a)];
+	}
+
+	else {
 		arr = [];
-		console.log("Дискриминант меньше 0, уравнение не имеет решения", arr)
 	}
 
 	return arr;
