@@ -28,9 +28,7 @@ Student.prototype.getAverage = function () {
         }
         return acc;
     }, 0);
-debugger;
     return average;
-
 }
 
 Student.prototype.exclude = function (reason) {
