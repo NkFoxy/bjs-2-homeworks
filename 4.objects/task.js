@@ -2,8 +2,11 @@ function Student(name, gender, age) {
     this.name = name;
     this.gender = gender;
     this.age = age;
-    let marks = [];
+    this.marks = [];
 }
+
+let student1 = new Student ("Василиса", "женский", 19);
+let student2 = new Student("Артём", "мужской", 25);
 
 Student.prototype.setSubject = function (subjectName) {
   subject = subjectName;
@@ -36,5 +39,3 @@ Student.prototype.exclude = function (reason) {
   this.excluded = reason;
 }
 
-let student1 = new Student ("Василиса", "женский", 19);
-let student2 = new Student("Артём", "мужской", 25);
