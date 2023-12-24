@@ -39,24 +39,20 @@ class Triangle {
         let p = this.perimeter / 2;
         return Number((Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c))).toFixed(3));
     }
-
-}
-
-class ErrorInfo {
-    get perimeter() {
-        return "Ошибка! Треугольник не существует";
-    }
-
-    get area() {
-        return "Ошибка! Треугольник не существует";
-    }
 }
 
 function getTriangle (a, b, c) {
     try {
         return new Triangle (a, b, c)
     } catch {
-        return new ErrorInfo();
+        return {
+            get perimeter() {
+                return "Ошибка! Треугольник не существует";
+            },
+            get area() {
+                return "Ошибка! Треугольник не существует";
+            }
+        };
     }
 
 }
